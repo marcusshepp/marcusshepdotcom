@@ -4,5 +4,5 @@ from django.contrib import admin
 from . import views
 
 urlpatterns = [
-    url(r'^api/main', views.main)
+    url(r'^main', views.main)
 ]

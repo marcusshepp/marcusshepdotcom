@@ -5,5 +5,5 @@ from main import urls as main_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', main_urls)
+    url(r'^api/', include(main_urls))
 ]
