@@ -24,6 +24,6 @@ from main.views import (
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #main
-    url(r'^', foo),
-    url(r'^bar/', bar),
+    url(r'^$', foo),
+    url(r'^bar/$', bar),
 ]
