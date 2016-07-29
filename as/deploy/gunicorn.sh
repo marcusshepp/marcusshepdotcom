@@ -5,6 +5,8 @@
 
 NAME=blog_api
 PATH=/opt/apps/marcusshepdotcom/blog/blog_api
+ENVS_DIR=/opt/envs/
+GUNICORN_BIN=$ENVS_DIR/$NAME/bin/gunicorn
 SETTINGS=$NAME.settings
 SOCK=/opt/proc/$NAME-gunicorn.sock
 PID=/opt/proc/$NAME-gunicorn.pid
@@ -30,7 +32,7 @@ else
 fi
 
 
-gunicorn \
+exec /var/www/test/venv/bin/gunicorn \
     --env DJANGO_SETTINGS_MODULE=$SETTINGS \
     $NAME.wsgi:application \
     --pid $PID \
