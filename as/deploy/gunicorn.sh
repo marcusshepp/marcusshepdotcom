@@ -5,7 +5,7 @@
 
 NAME=blog_api
 PATH=/opt/apps/marcusshepdotcom/blog/blog_api
-SETTINGS=$PATH.settings
+SETTINGS=$NAME.settings
 SOCK=/opt/proc/$NAME-gunicorn.sock
 PID=/opt/proc/$NAME-gunicorn.pid
 LOGFILE=/opt/proc/$NAME-gunicorn.log
@@ -32,7 +32,7 @@ fi
 
 gunicorn \
     --env DJANGO_SETTINGS_MODULE=$SETTINGS \
-    $PATH.wsgi:application \
+    $NAME.wsgi:application \
     --pid $PID \
     --bind unix:$SOCK \
     --workers $WORKERS \
