@@ -32,7 +32,7 @@ else
 fi
 
 
-exec /var/www/test/venv/bin/gunicorn \
+exec $GUNICORN_BIN \
     --env DJANGO_SETTINGS_MODULE=$SETTINGS \
     $NAME.wsgi:application \
     --pid $PID \
