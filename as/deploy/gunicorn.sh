@@ -2,8 +2,10 @@
 # Runs on apps built with Django==1.9
 # Marcus Shepherd <marcusshepdotcom@gmail.com>
 
-NAME=/opt/apps/marcusshepdotcom/blog/blog_api
-SETTINGS=$NAME.settings
+
+NAME=blog_api
+PATH=/opt/apps/marcusshepdotcom/blog/blog_api
+SETTINGS=$PATH.settings
 SOCK=/opt/proc/$NAME-gunicorn.sock
 PID=/opt/proc/$NAME-gunicorn.pid
 LOGFILE=/opt/proc/$NAME-gunicorn.log
@@ -30,7 +32,7 @@ fi
 
 gunicorn \
     --env DJANGO_SETTINGS_MODULE=$SETTINGS \
-    $NAME.wsgi:application \
+    $PATH.wsgi:application \
     --pid $PID \
     --bind unix:$SOCK \
     --workers $WORKERS \
