@@ -2,7 +2,7 @@
 # Runs on apps built with Django==1.9
 # Marcus Shepherd <marcusshepdotcom@gmail.com>
 
-NAME=blog_api
+NAME=/opt/apps/marcusshepdotcom/blog/blog_api
 SETTINGS=$NAME.settings
 SOCK=/opt/proc/$NAME-gunicorn.sock
 PID=/opt/proc/$NAME-gunicorn.pid
