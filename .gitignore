@@ -1,3 +1,4 @@
 .opt/
 .opt/*
 db*
+*.pyc
