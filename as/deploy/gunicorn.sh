@@ -1,7 +1,7 @@
 # Generates a Daemon process with Gunicorn.
 # Runs on apps built with Django==1.9
 # Marcus Shepherd <marcusshepdotcom@gmail.com>
-
+# 8.1.17
 
 NAME=blog_api
 PATH=/opt/apps/marcusshepdotcom/blog/blog_api
