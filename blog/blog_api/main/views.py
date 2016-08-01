@@ -8,4 +8,4 @@ def foo(request, *a, **kw):
     
     
 def bar(request, *a, **kw):
-    return JsonResponse({"pop": "lol"})
+    return HttpResponse("Marcus Was Here!")

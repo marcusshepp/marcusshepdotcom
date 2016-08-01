@@ -5,7 +5,7 @@
 
 NAME=blog_api
 PATH=/opt/apps/marcusshepdotcom/blog/blog_api
-ENVS_DIR=/opt/envs/
+ENVS_DIR=/opt/envs
 GUNICORN_BIN=$ENVS_DIR/$NAME/bin/gunicorn
 SETTINGS=$NAME.settings
 SOCK=/opt/proc/$NAME-gunicorn.sock
