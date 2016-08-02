@@ -29,7 +29,7 @@ if ! [[ -d $DIRECT ]]; then
 else
     echo "Yes it does."
     echo "removing /opt/proc/$NAME*"
-    bash /opt/deploy/remove_opt_proc_star.sh
+    sudo /bin/rm /opt/proc/$NAME*
 fi
 
 
