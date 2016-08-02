@@ -29,7 +29,7 @@ if ! [[ -d $DIRECT ]]; then
 else
     echo "Yes it does."
     echo "removing /opt/proc/$NAME*"
-    sudo /bin/rm /opt/proc/$NAME*
+    /bin/rm /opt/proc/$NAME*
 fi
 
 
