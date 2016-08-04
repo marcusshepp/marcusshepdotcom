@@ -1,12 +1,17 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 
-from main.views import foo, bar
+from rest_framework.routers import DefaultRouter
+
+from main.views import ArticleViewSet, CommentViewSet
+
+router = DefaultRouter()
+router.register("articles", ArticleViewSet)
+router.register("comments", CommentViewSet)
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', foo),
-    url(r'^bar/$', bar),
+    url(r'^foo/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
