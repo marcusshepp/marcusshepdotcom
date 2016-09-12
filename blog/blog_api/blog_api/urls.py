@@ -5,10 +5,16 @@ from django.conf.urls.static import static
 
 from rest_framework.routers import DefaultRouter
 
-from main.views import ArticleViewSet, CommentViewSet
+from main.views import (
+    ArticleViewSet, 
+    CommentViewSet,
+    CategoryViewSet,
+)
+
 
 router = DefaultRouter()
 router.register("articles", ArticleViewSet)
+router.register("categories", CategoryViewSet)
 router.register("comments", CommentViewSet)
 
 urlpatterns = [

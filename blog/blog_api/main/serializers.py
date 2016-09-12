@@ -3,24 +3,24 @@ from rest_framework import serializers as s
 from main import models
 
 
+class CategorySerializer(s.ModelSerializer):
+    class Meta:
+        model = models.Category
+        fields = (
+            "title",
+        )
+
+
 class ArticleSerializer(s.HyperlinkedModelSerializer):
+    categories = models.Category.objects.all()
+    categories = CategorySerializer(categories, many=True, read_only=True)
     class Meta:
         model = models.Article
         fields = (
             "title",
             "body",
-            "comments",
+            "categories",
         )
-
-    def create(self, validated_data):
-        article = models.Article(
-            title=validated_data["title"],
-            body=validated_data["body"],
-            comments=validated_data.get("comments", None),
-        )
-        print "article", article
-        article.save()
-        return article
 
 
 class CommentSerializer(s.ModelSerializer):
