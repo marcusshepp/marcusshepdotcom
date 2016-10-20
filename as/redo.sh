@@ -1,5 +1,5 @@
 echo $1
-echo "deleting all data w/o booting server..."
+echo "deleting all data..."
 rm db*;
 echo "remaking migrations for $1.."
 if [[ -e $1/migrations ]]; then
@@ -16,7 +16,8 @@ echo "**migrating**"
 python manage.py migrate
 for i in "$@" ; do
 	if [[ $i == "boot" ]]; then
-		bash ~/projects/dollars/as/django/bootserver.sh
+        echo "booting server"
+		bash ~/projects/marcusshepdotcom/as/django/bootserver.sh
 		break
 	fi
 done
