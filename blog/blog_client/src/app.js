@@ -5,9 +5,9 @@ import Header from './components/header';
 import Body from './components/body';
 import ajax from './act/ajax';
 
+
 class Blog extends Component {
     render(){
-        ajax("GET", "api/articles/");
         return (
             <div>
                 <Header />
