@@ -1,0 +1,9 @@
+<div class="post-list-container">
+  <div class="post-list-item" *ngFor="let post of posts">
+    <div class="post-list-title">
+      <a routerLink="/posts/{{ post._id }}">
+      {{ post.title }}
+      </a>
+    </div>
+  </div>
+</div>
