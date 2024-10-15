@@ -5,3 +5,9 @@ db*
 /node_modules/
 node_modules/*
 node_modules
+
+v3/msdc/tailwindcss-linux-x64
+v3/msdc/db*
+v3/msdc/**/__pycache__
+v3/venv
+v3/msdc/b/static/output.css

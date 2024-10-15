@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>B</title>
+        {% load static %}
+        <link
+            rel="stylesheet"
+            href="{% static 'output.css' %}" />
+    </head>
+    <body class="bg-black">
+        {% block main %}
+        <div class="w-full bg-slate-200">
+            <button
+                hx-delete="{% url 'delete' %}"
+                hx-target="#foo"
+                class="bg-white drop-shadow-md rounded-md p-1 m-2">
+                delete
+            </button>
+            <div class="w-full flex justify-center">
+                <div
+                    id="foo"
+                    class="text-slate-500">
+                    baz
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        <script src="https://unpkg.com/htmx.org@2.0.3"></script>
+        <script>
+            document.body.addEventListener('htmx:configRequest', (event) => {
+                event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+            });
+        </script>
+    </body>
+</html>
