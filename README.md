@@ -1,3 +1,3 @@
-One day I'll decide on a tech and deploy a blog ;D
+One day I'll decide on a tech stack and deploy a blog ;D
 
 # ... One day ...
