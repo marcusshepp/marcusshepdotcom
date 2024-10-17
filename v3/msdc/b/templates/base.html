@@ -5,31 +5,19 @@
         <link
             rel="stylesheet"
             href="{% static 'output.css' %}" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
         <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     </head>
     <body class="bg-slate-800 text-slate-200">
         {% block main %}
 
-        <!-- nav -->
+        <!-- typewriter -->
         <div class="w-full p-4">
-            <!-- top left button -->
-            <!-- <div
-                hx-delete="{% url 'delete' %}"
-                hx-target="#foo"
-                class="bg-white w-6 h-6 drop-shadow-md cursor-pointer rounded-full m-2"></div> -->
-
             <div class="typewriter w-fit font-bold text-xl">
                 <div class="tracking-wider">const marcusshep;</div>
             </div>
-
-            <!-- login -->
-            <!-- <div class="w-full flex justify-center">
-                <div
-                    id="foo"
-                    class="">
-                    baz
-                </div>
-            </div> -->
         </div>
 
         <!-- intro -->
@@ -39,10 +27,15 @@
             <div class="">One Line At A Time;</div>
         </div>
 
+        <div
+            hx-get="/posts"
+            hx-trigger="load">
+            <div>loading...</div>
+        </div>
+
         <!-- posts -->
-        <div>
-            <div
-                class="w-full p-4 flex flex-col items-center justify-center h-auto border-2 border-slate-100 rounded-lg">
+        <div class="flex justify-between flex-wrap">
+            <div class="post">
                 <img
                     class="w-1/2 h-full"
                     src="{% static 'random.jpg' %}"
@@ -59,8 +52,41 @@
                     </div>
                 </div>
             </div>
-            <div
-                class="w-full p-4 mt-20 flex flex-col items-center justify-center h-auto border-2 border-slate-100 rounded-lg">
+            <div class="post">
+                <img
+                    class="w-1/2 h-full"
+                    src="{% static 'random.jpg' %}"
+                    alt="" />
+                <div class="text-3xl mt-10">
+                    Building a blog with HTMX and Tailwind
+                </div>
+                <div class="text-sm flex justify-center w-full mt-12">
+                    <div>
+                        Doing everything that react can do, will 1000th of the
+                        size
+                        <br />
+                        Why use 100k lines of code?
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <img
+                    class="w-1/2 h-full"
+                    src="{% static 'random.jpg' %}"
+                    alt="" />
+                <div class="text-3xl mt-10">
+                    Building a blog with HTMX and Tailwind
+                </div>
+                <div class="text-sm flex justify-center w-full mt-12">
+                    <div>
+                        Doing everything that react can do, will 1000th of the
+                        size
+                        <br />
+                        Why use 100k lines of code?
+                    </div>
+                </div>
+            </div>
+            <div class="post">
                 <img
                     class="w-1/2 h-full"
                     src="{% static 'random.jpg' %}"

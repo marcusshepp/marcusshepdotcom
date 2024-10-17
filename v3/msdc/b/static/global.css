@@ -30,3 +30,9 @@
         border-color: white;
     }
 }
+
+@layer components {
+    .post {
+        @apply lg:w-half lg:m-1 md:w-full lg:mt-0 mt-2 p-4 flex flex-col items-center justify-center h-auto border-2 border-slate-100 rounded-lg;
+    }
+}
