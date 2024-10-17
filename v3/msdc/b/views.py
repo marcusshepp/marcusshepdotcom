@@ -12,7 +12,9 @@ def index(request):
 @require_http_methods(['GET'])
 def get_posts(request):
     posts = Post.objects.all()
-    return HttpResponse(posts)
+    return HttpResponse(f"""
+        <div class="text-5xl">marcuisshep[]</div>
+""")
 
 
 @require_http_methods(['DELETE'])
