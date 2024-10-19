@@ -5,10 +5,10 @@
         <link
             rel="stylesheet"
             href="{% static 'output.css' %}" />
+
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
-        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     </head>
     <body class="bg-slate-800 text-slate-200">
         {% block main %}
@@ -27,82 +27,11 @@
             <div class="">One Line At A Time;</div>
         </div>
 
+        <!-- posts -->
         <div
             hx-get="/posts"
             hx-trigger="load">
             <div>loading...</div>
-        </div>
-
-        <!-- posts -->
-        <div class="flex justify-between flex-wrap">
-            <div class="post">
-                <img
-                    class="w-1/2 h-full"
-                    src="{% static 'random.jpg' %}"
-                    alt="" />
-                <div class="text-3xl mt-10">
-                    Building a blog with HTMX and Tailwind
-                </div>
-                <div class="text-sm flex justify-center w-full mt-12">
-                    <div>
-                        Doing everything that react can do, will 1000th of the
-                        size
-                        <br />
-                        Why use 100k lines of code?
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <img
-                    class="w-1/2 h-full"
-                    src="{% static 'random.jpg' %}"
-                    alt="" />
-                <div class="text-3xl mt-10">
-                    Building a blog with HTMX and Tailwind
-                </div>
-                <div class="text-sm flex justify-center w-full mt-12">
-                    <div>
-                        Doing everything that react can do, will 1000th of the
-                        size
-                        <br />
-                        Why use 100k lines of code?
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <img
-                    class="w-1/2 h-full"
-                    src="{% static 'random.jpg' %}"
-                    alt="" />
-                <div class="text-3xl mt-10">
-                    Building a blog with HTMX and Tailwind
-                </div>
-                <div class="text-sm flex justify-center w-full mt-12">
-                    <div>
-                        Doing everything that react can do, will 1000th of the
-                        size
-                        <br />
-                        Why use 100k lines of code?
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <img
-                    class="w-1/2 h-full"
-                    src="{% static 'random.jpg' %}"
-                    alt="" />
-                <div class="text-3xl mt-10">
-                    Building a blog with HTMX and Tailwind
-                </div>
-                <div class="text-sm flex justify-center w-full mt-12">
-                    <div>
-                        Doing everything that react can do, will 1000th of the
-                        size
-                        <br />
-                        Why use 100k lines of code?
-                    </div>
-                </div>
-            </div>
         </div>
 
         {% endblock %}

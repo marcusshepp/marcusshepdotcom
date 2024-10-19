@@ -5,18 +5,17 @@ from django.views.decorators.http import require_http_methods
 
 from .models import Post
 
+
 def index(request):
-    return render(request, 'base.html')
+    return render(request, "base.html")
 
 
-@require_http_methods(['GET'])
+@require_http_methods(["GET"])
 def get_posts(request):
     posts = Post.objects.all()
-    return HttpResponse(f"""
-        <div class="text-5xl">marcuisshep[]</div>
-""")
+    return render(request, "posts.html", {"posts": posts})
 
 
-@require_http_methods(['DELETE'])
+@require_http_methods(["DELETE"])
 def delete(request, id=None):
     return HttpResponse(random.randint(0, 100))

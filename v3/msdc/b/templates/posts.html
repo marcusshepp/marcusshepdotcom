@@ -1,0 +1,18 @@
+{% load static %}
+<div class="flex justify-between flex-wrap">
+    {% for p in posts %}
+
+    <div class="post">
+        <img
+            class="w-1/2 h-full"
+            src="{% static p.img.url %}"
+            alt="" />
+        <div class="text-3xl mt-10">{{ p.title }}</div>
+
+        <div class="text-sm flex justify-center w-full mt-12">
+            <div>{{ p.sub_title }}</div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
