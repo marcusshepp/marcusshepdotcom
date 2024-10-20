@@ -5,9 +5,131 @@
     hx-target="#blog-container">
     BACK
 </div>
-<div>
-    foobar-pop-lol
-    <p>foo</p>
-    <li>pop</li>
-    <li>lol</li>
-</div>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0" />
+        <title>Why React Sucks for Certain Projects: The Case for HTMX</title>
+    </head>
+    <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
+        <div class="max-w-4xl m-6 p-6">
+            <h1 class="text-3xl font-bold mb-4">
+                Why React Sucks for Certain Projects: The Case for HTMX
+            </h1>
+            <p class="mb-4">
+                In the ever-evolving landscape of web development, React has
+                emerged as a dominant force, praised for its flexibility and
+                component-driven architecture. However, as developers lean
+                heavily on React to solve a variety of problems, it’s important
+                to recognize that it isn't always the best fit. Enter HTMX, a
+                powerful tool that offers a simpler, more intuitive approach for
+                specific use cases, particularly those that emphasize rapid
+                development and enhanced developer experience.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-6 mb-2">
+                Complexity Overhead
+            </h2>
+            <p class="mb-4">
+                One of the most significant drawbacks of React is the complexity
+                it introduces to even the simplest projects. With concepts like
+                JSX, hooks, state management, and lifecycle methods, new
+                developers can feel overwhelmed. For instance, consider a simple
+                task like creating a form that submits data:
+            </p>
+
+            <pre class="bg-gray-200 p-4 rounded mb-4 overflow-x-auto">
+            <code class="text-sm">
+                import React, { useState } from 'react';
+
+                function MyForm() {
+                  const [inputValue, setInputValue] = useState('');
+
+                  const handleSubmit = (e) => {
+                    e.preventDefault();
+                    console.log(inputValue);
+                  };
+
+                  return (
+                    &lt;form onSubmit={handleSubmit}&gt;
+                      &lt;input 
+                        type="text" 
+                        value={inputValue} 
+                        onChange={(e) =&gt; setInputValue(e.target.value)} 
+                      /&gt;
+                      &lt;button type="submit"&gt;Submit&lt;/button&gt;
+                    &lt;/form&gt;
+                  );
+                }
+            </code>
+        </pre>
+
+            <p class="mb-4">
+                This code, while functional, introduces unnecessary complexity
+                for straightforward tasks. HTMX, on the other hand, allows you
+                to achieve similar functionality with far less boilerplate:
+            </p>
+
+            <pre class="bg-gray-200 p-4 rounded mb-4 overflow-x-auto">
+            <code class="text-sm">
+                &lt;form hx-post="/submit" hx-target="#response"&gt;
+                  &lt;input type="text" name="inputValue" /&gt;
+                  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+                &lt;/form&gt;
+                &lt;div id="response"&gt;&lt;/div&gt;
+            </code>
+        </pre>
+
+            <h2 class="text-2xl font-semibold mt-6 mb-2">
+                Developer Experience
+            </h2>
+            <p class="mb-4">
+                The developer experience is another area where HTMX shines
+                compared to React. With React, developers often find themselves
+                navigating a plethora of libraries and tools to manage state,
+                routing, and side effects. This fragmented ecosystem can lead to
+                decision fatigue, as you have to choose the right tools for each
+                project. HTMX simplifies this by allowing developers to use
+                plain HTML and a minimal JavaScript layer, fostering a more
+                seamless and enjoyable development experience.
+            </p>
+
+            <p class="mb-4">
+                In contrast to React's often steep learning curve, HTMX's
+                simplicity allows developers to focus on building features
+                rather than managing a complex setup. The quick feedback loop
+                provided by HTMX can lead to faster iterations and a more
+                satisfying workflow.
+            </p>
+
+            <h2 class="text-2xl font-semibold mt-6 mb-2">
+                Avoiding the One-Size-Fits-All Approach
+            </h2>
+            <p class="mb-4">
+                The tendency for developers to default to React for every
+                project can stifle creativity and lead to over-engineering. Not
+                every project needs a full-fledged frontend framework. For
+                applications that require simple interactions or progressive
+                enhancement, HTMX provides a refreshing alternative. By focusing
+                on server-driven applications, HTMX allows for a more natural
+                flow of data and reduces the amount of client-side code you need
+                to write and maintain.
+            </p>
+
+            <p class="mb-4">
+                In conclusion, while React has its merits, it isn’t always the
+                best choice. For projects where developer experience,
+                simplicity, and quick iteration are paramount, HTMX offers a
+                compelling alternative. By recognizing the strengths and
+                weaknesses of both tools, developers can make informed choices
+                that lead to more efficient and enjoyable development processes.
+                So next time you’re considering your tech stack, think about
+                whether HTMX might be the right fit for your project.
+            </p>
+        </div>
+    </body>
+</html>
