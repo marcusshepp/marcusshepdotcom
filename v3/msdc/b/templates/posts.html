@@ -2,7 +2,11 @@
 <div class="flex justify-between flex-wrap">
     {% for p in posts %}
 
-    <div class="post">
+    <div
+        class="post"
+        hx-trigger="click"
+        hx-get="/post/foobar-pop-lol"
+        hx-target="#blog-container">
         <img
             class="w-1/2 h-full"
             src="{% static p.img.url %}"

@@ -28,10 +28,12 @@
         </div>
 
         <!-- posts -->
-        <div
-            hx-get="/posts"
-            hx-trigger="load">
-            <div>loading...</div>
+        <div id="blog-container">
+            <div
+                hx-get="/posts"
+                hx-trigger="load">
+                <div>loading...</div>
+            </div>
         </div>
 
         {% endblock %}

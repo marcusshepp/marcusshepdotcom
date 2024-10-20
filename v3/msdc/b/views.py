@@ -1,6 +1,4 @@
-import random
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.views.decorators.http import require_http_methods
 
 from .models import Post
@@ -16,6 +14,6 @@ def get_posts(request):
     return render(request, "posts.html", {"posts": posts})
 
 
-@require_http_methods(["DELETE"])
-def delete(request, id=None):
-    return HttpResponse(random.randint(0, 100))
+@require_http_methods(["GET"])
+def get_post(request, slug):
+    return render(request, f"posts/{slug}.html")
