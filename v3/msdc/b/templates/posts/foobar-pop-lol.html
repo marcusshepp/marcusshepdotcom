@@ -1,4 +1,7 @@
+{% extends "base.html" %} 
 {% load static %}
+    {% block content %}
+
 <div
     hx-get="/posts"
     hx-trigger="click"
@@ -6,15 +9,6 @@
     BACK
 </div>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0" />
-        <title>Why React Sucks for Certain Projects: The Case for HTMX</title>
-    </head>
     <body class="bg-gray-100 text-gray-800 font-sans leading-relaxed">
         <div class="max-w-4xl m-6 p-6">
             <h1 class="text-3xl font-bold mb-4">
@@ -131,5 +125,4 @@
                 whether HTMX might be the right fit for your project.
             </p>
         </div>
-    </body>
-</html>
+    {% endblock content %}

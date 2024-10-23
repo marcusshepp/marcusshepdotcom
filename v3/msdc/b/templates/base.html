@@ -1,17 +1,17 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>B</title>
         {% load static %}
         <link
             rel="stylesheet"
-            href="{% static 'output.css' %}" />
+            href="{% static '/output.css' %}" />
 
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0" />
     </head>
     <body class="bg-slate-800 text-slate-200">
-        {% block main %}
 
         <!-- typewriter -->
         <div class="w-full p-4">
@@ -26,6 +26,7 @@
             <div class="">Tinkering;</div>
             <div class="">One Line At A Time;</div>
         </div>
+    {% block content %}
 
         <!-- posts -->
         <div id="blog-container">
@@ -36,7 +37,8 @@
             </div>
         </div>
 
-        {% endblock %}
+    {% endblock content %}
+
         <script src="https://unpkg.com/htmx.org@2.0.3"></script>
         <script>
             document.body.addEventListener('htmx:configRequest', (event) => {

@@ -1,23 +1,32 @@
+{% extends "base.html" %} 
 {% load static %}
-<div class="flex justify-between flex-wrap">
-    {% for p in posts %}
+    {% block content %}
 
-    <div
-        class="post"
-        hx-trigger="click"
+
+    <div class="flex justify-between flex-wrap">
+      {% for p in posts %}
+
+      <!--
         hx-get="/post/foobar-pop-lol"
-        hx-target="#blog-container">
-        <img
-            class="w-1/2 h-full"
-            src="{% static p.img.url %}"
-            alt="" />
-        <div class="text-3xl mt-10">{{ p.title }}</div>
+      -->
+      <a
+          class="post"
+          href="/post/foobar-pop-lol"
+          >
+          <img
+              class="w-1/2 h-full"
+              src="{% static p.img.url %}"
+              alt="" />
+          <div class="text-3xl mt-10">{{ p.title }}</div>
 
-        <div class="text-sm flex justify-center w-full mt-12">
+          <div class="text-sm flex justify-center w-full mt-12">
             <div>{{ p.sub_title }}</div>
-        </div>
+          </div>
+      </a>
+
+      {% endfor %}
+
     </div>
 
-    {% endfor %}
-    
-</div>
+
+    {% endblock content %}
