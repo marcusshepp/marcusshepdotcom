@@ -12,24 +12,55 @@
             content="width=device-width, initial-scale=1.0" />
     </head>
     <body class="bg-slate-800 text-slate-200">
-
+     <div class="flex w-full h-72">
+        
         <!-- typewriter -->
         <div class="w-full p-4">
             <div class="typewriter w-fit font-bold text-xl">
-                <div class="tracking-wider">const marcusshep;</div>
+              <div class="tracking-wider">def marcusshep(<img style='width: 32px; height 10px' src="{% static 'computer.svg' %}" alt="">): void {}</div>
             </div>
         </div>
+        <!---->
+        <!-- Intro -->
+        <!--<div-->
+        <!--    class="p-4 mb-10 text-5xl bg-gradient-to-r from-slate-800 from-80% to-slate-700 to-100%">-->
+        <!--    <div class="">Tinkering;</div>-->
+        <!--    <div class="">One Line At A Time;</div>-->
+        <!--</div>-->
+        <div class="cuber">
+          
+          <div class="container">
+            <div class="cube">
+              
+              <div style="--x:0; --y:0;">
+                <span style="--i:3;"></span>
+                <span style="--i:2;"></span>
+              </div>
+              <div style="--x:1; --y:0;">
+                <span style="--i:3;"></span>
+                <span style="--i:2;"></span>
+              </div>
+            </div>
 
-        <!-- intro -->
-        <div
-            class="p-4 mb-10 text-5xl bg-gradient-to-r from-slate-800 from-80% to-slate-700 to-100%">
-            <div class="">Tinkering;</div>
-            <div class="">One Line At A Time;</div>
+            <div class="cube">
+            
+              <div style="--x:0; --y:0;">
+                <span style="--i:3;"></span>
+                <span style="--i:2;"></span>
+              </div>
+              <div style="--x:1; --y:0;">
+                <span style="--i:3;"></span>
+                <span style="--i:2;"></span>
+              </div>
+            </div>
+          </div>
+
+      </div> 
         </div>
-    {% block content %}
+  {% block content %}
 
-        <!-- posts -->
-        <div id="blog-container">
+      <!-- posts -->
+      <div id="blog-container">
             <div
                 hx-get="/posts"
                 hx-trigger="load">
